@@ -3,14 +3,10 @@
   "profiles": {
 
     "default": {
-      "configs_repo": "ACCESS-NRI/CONFIGS_REPO_HERE",
+      "configs_repo": "ACCESS-NRI/access-cm3-configs",
       "configs": {
-        "dev-CONFIG_NAME_HERE": {
-          "checks": {
-            "repro": true
-          }
-        }
       }
     }
+
   }
 }

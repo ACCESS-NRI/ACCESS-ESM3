@@ -2,67 +2,118 @@
 #
 # It describes a set of packages to be installed, along with
 # configuration settings.
+# Instructions for editing this file are found in
+# https://github.com/ACCESS-NRI/model-deployment-template/blob/main/spack.yaml
 spack:
-  # definitions:
-    # TODO: _name and _version are required reserved definitions that inform build-cd deployments, and have no effect otherwise
-    # - _name: [DEPLOYMENT_NAME_HERE]
-    # - _version: [DEPLOYMENT_VERSION_HERE]
-
-    # TODO: This section is used primarily to provide variations to a model based on deployment target. Delete if not required.
-    # This is the root spack bundle that contains the model
-    # - ROOT_PACKAGE:
-    #   - MODEL@git.GIT_REF=SPACK_VERSION
-
-    # Mutually-exclusive Compiler and Target definitions (assumes DEPLOYMENT_TARGET set)
-    # - when: env['DEPLOYMENT_TARGET'] == 'Gadi'
-    #   compiler_target: ['%intel@19.0.5.281 target=x86_64_v4']
-    # More mutually-exclusive definitions can be made...
-    # Default
-    # - when: "'DEPLOYMENT_TARGET' not in env"
-    #   compiler_targets: ['intel@2021.2.0 target=x86_64']
-
-    # This is where the single definitions of ROOT_PACKAGE and compiler/target are
-    # matrixed together to form a single spec: MODEL@git.GIT_REF=SPACK_VERSION %intel@2021.2.0 target=x86_64
-    # - ROOT_SPEC:
-    #   - matrix:
-    #     - [$ROOT_PACKAGE]
-    #     - [$%compiler_target]
-
+  # _name and _version are reserved definitions that inform deployments
+  definitions:
+  - _name: [access-esm3]
+  - _version: [2026.03.000]
   specs:
-    # The root Spack Bundle Recipe (SBR) for the model
-    # TODO: Replace the MODEL if there is only one deployment target
-    # - MODEL
-    # Alternatively, if there are multiple deployment targets that require
-    # different compilers/variants, use the above definitions section and:
-    # - $ROOT_SPEC
+  - access-esm3
   packages:
-    # Specification of dependency versions and variants. CI/CD requires that
-    # the first element of the require is only a version:
-    # TODO: Specify versions and variants of dependencies as required.
-    # openmpi:
-    #   require:
-    #   - '@4.1.5'
+    # Main Dependencies
+    access3:
+      require:
+      - '@git.c268dd064c6ff3700ea71e4607831555a3724ffa=stable'
+      - configurations=MOM6-CICE6-UM13
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    um:
+      require:
+      - '@13.0'
+      # - '+access3~eccodes'
+      - casim_ref=um13.0 jules_ref=JULES_vn7.0 shumlib_ref=um13.0 socrates_ref=um13.0 ukca_ref=b42593d0c8fe744f9cc1d1556a664fec792f4766 um_ref=vn13.0_nuopc_spack_build
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    access-cice:
+      require:
+      - '@CICE6.6.3-0'
+      - io_type=PIO
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    access-mom6:
+      require:
+      - '@2026.01.001'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    access3-share:
+      require:
+      - '@git.c268dd064c6ff3700ea71e4607831555a3724ffa=stable'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    access-generic-tracers:
+      require:
+      - '@2026.02.001'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    access-mocsy:
+      require:
+      - '@2025.07.002'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+
+    # Other Dependencies
+    gcom:
+      require:
+      # - '@8.0'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+    esmf:
+      require:
+      - '@8.9.1'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -traceback"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -fno-omit-frame-pointer"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -fno-omit-frame-pointer"
+    parallelio:
+      require:
+      - '@2.6.8'
+      - fflags="-g -traceback"
+      - cflags="-g -fno-omit-frame-pointer"
+      - cxxflags="-g -fno-omit-frame-pointer"
+    netcdf-c:
+      require:
+      - '@4.9.3'
+      - build_system=cmake build_type=RelWithDebInfo
+    netcdf-fortran:
+      require:
+      - '@4.6.2'
+    fms:
+      require:
+      - '@2025.03'
+      - cppflags="-DMAXFIELDMETHODS_=600"
+    openmpi:
+      require:
+      - '@4.1.7'
+    fortranxml:
+      require:
+      - '@4.1.2'
+    python:
+      require:
+      - '@3.11.7'   # force spack to use the system python install
 
     # Compilers
-    # TODO: For compilers used in this deployment, specify versions as required.
-    #       If changing compiler families, don't forget to update the 'all' section below.
+    c:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
+    cxx:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
+    fortran:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
 
-    # Specifications that apply to all packages
     all:
-      # TODO: Specify compiler toolchain/targets for all packages
-      # require:
-      # - '%access_intel'
-      # - 'target=x86_64'
+      prefer:
+      - target=x86_64_v4
   view: true
   concretizer:
     unify: true
-  # modules:
-  #   overridden module includes, projections, etc, if needed
-  #   we inject these in build-cd now, but custom ones can be added additionally here
-  # config:
-  #   overridden spack configurations, if needed. Preference is to use custom configurations scopes in
-  #   spack-config's custom/cd/SCOPE, referenced in the config/versions.json's custom-scopes field.
-  # mirrors:
-  #   overridden spack package tarball directories, if needed
-  # repos:
-  #   overridden repo sources, if needed
