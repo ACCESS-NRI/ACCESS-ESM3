@@ -5,8 +5,8 @@
 spack:
   definitions:
     # TODO: _name and _version are required reserved definitions that inform build-cd deployments, and have no effect otherwise
-    - _name: [DEPLOYMENT_NAME_HERE]
-    - _version: [DEPLOYMENT_VERSION_HERE]
+    - _name: [gcom]
+    - _version: [7.8]
 
     # TODO: This section is used primarily to provide variations to a model based on deployment target. Delete if not required.
     # This is the root spack bundle that contains the model
