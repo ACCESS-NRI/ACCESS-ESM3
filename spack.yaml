@@ -3,10 +3,10 @@
 # It describes a set of packages to be installed, along with
 # configuration settings.
 spack:
-  # definitions:
+  definitions:
     # TODO: _name and _version are required reserved definitions that inform build-cd deployments, and have no effect otherwise
-    # - _name: [DEPLOYMENT_NAME_HERE]
-    # - _version: [DEPLOYMENT_VERSION_HERE]
+    - _name: [DEPLOYMENT_NAME_HERE]
+    - _version: [DEPLOYMENT_VERSION_HERE]
 
     # TODO: This section is used primarily to provide variations to a model based on deployment target. Delete if not required.
     # This is the root spack bundle that contains the model
