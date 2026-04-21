@@ -29,8 +29,12 @@ spack:
     #     - [$%compiler_target]
 
   specs:
-    - gcom@7.8
+    - gcom
   packages:
+
+    gcom:
+      require:
+      - @7.8
     # Compilers
     c:
       require:
