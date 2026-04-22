@@ -68,7 +68,7 @@ spack:
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     esmf:
       require:
-      - '@8.9.1'
+      - '@8.7.0'
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -traceback"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -fno-omit-frame-pointer"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -fno-omit-frame-pointer"
