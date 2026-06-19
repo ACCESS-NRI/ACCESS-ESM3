@@ -12,7 +12,7 @@ ACCESS-ESM3 is built and deployed automatically to `gadi` on NCI (see below for 
 
 ## About this repository
 
-This is the Model Deployment Repository for the ACCESS-OM3 model executable. This repository contains a [spack environment](https://spack.readthedocs.io/en/latest/environments.html) manifest file ([`spack.yaml`](./spack.yaml)) that defines all the essential components of the model, including exact versions of the source code used.
+This is the Model Deployment Repository for the ACCESS-ESM3 model executable. This repository contains a [spack environment](https://spack.readthedocs.io/en/latest/environments.html) manifest file ([`spack.yaml`](./spack.yaml)) that defines all the essential components of the model, including exact versions of the source code used.
 
 ## Releases
 
