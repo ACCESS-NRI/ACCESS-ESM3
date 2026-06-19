@@ -6,9 +6,9 @@
 
 # ACCESS-ESM3
 
-ACCESS-CM3 is an atmosphere - ocean - sea ice (- land - ocean_BGC) model under development, consisting of forks of the [MOM6](https://github.com/ACCESS-NRI/MOM6) ocean model (with optional [WOMBAT BGC](https://github.com/ACCESS-NRI/GFDL-generic-tracers)), [CICE6](https://github.com/ACCESS-NRI/CICE) sea ice model and [UM13](https://github.com/ACCESS-NRI/UM13) atmosphere model. 
+ACCESS-ESM3 is an atmosphere - ocean - sea ice (- land - ocean_BGC) model under development, consisting of forks of the [MOM6](https://github.com/ACCESS-NRI/MOM6) ocean model (with optional [WOMBAT BGC](https://github.com/ACCESS-NRI/GFDL-generic-tracers)), [CICE6](https://github.com/ACCESS-NRI/CICE) sea ice model and [UM13](https://github.com/ACCESS-NRI/UM13) atmosphere model. 
 
-ACCESS-CM3 is built and deployed automatically to `gadi` on NCI (see below for details). **In general, most users should start from one of the [ACCESS-CM3 suites](https://github.com/access-nri/access-cm3-configs)**, rather than building from these sources.
+ACCESS-ESM3 is built and deployed automatically to `gadi` on NCI (see below for details). **In general, most users should start from one of the [ACCESS-CM3 suites](https://github.com/access-nri/access-cm3-configs)**, rather than building from these sources.
 
 ## About this repository
 
