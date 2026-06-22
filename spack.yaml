@@ -22,8 +22,7 @@ spack:
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     um:
       require:
-      - '@git.f2772a7bb7863ee9b4c00059cf15f861e9a19351=stable'          # rCM3 modified branch
-      # - casim_ref=um13.0 jules_ref=JULES_vn7.0 shumlib_ref=um13.0 socrates_ref=um13.0 ukca_ref=b42593d0c8fe744f9cc1d1556a664fec792f4766 um_ref=vn13.0_nuopc
+      - casim_ref=um13.5 jules_ref=JULES_vn7.0 shumlib_ref=um13.5 socrates_ref=um13.5 ukca_ref=b42593d0c8fe744f9cc1d1556a664fec792f4766 um_ref=regional_cm3_stable-ish
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
