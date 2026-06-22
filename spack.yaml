@@ -23,7 +23,7 @@ spack:
     um:
       require:
       - '@13.5'
-      - casim_ref=um13.5 jules_ref=JULES_vn7.0 shumlib_ref=um13.5 socrates_ref=um13.5 ukca_ref=um13.5 um_ref=regional_cm3-dev_spackbuild
+      - casim_ref=um13.5 jules_ref=JULES_vn7.5 shumlib_ref=um13.5 socrates_ref=um13.5 ukca_ref=um13.5 um_ref=regional_cm3-dev_spackbuild
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
