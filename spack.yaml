@@ -15,7 +15,7 @@ spack:
     # Main Dependencies
     access3:
       require:
-      - '@git.68b11be086fceb97124aa3b1dba799c01f8d3413=stable'          # rCM3 modified branch
+      - '@git.ebf034d9f7b708520c3c5b83691bd70180f8ed96=stable'          # rCM3 modified branch
       - configurations=MOM6-CICE6-UM13
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
@@ -42,7 +42,7 @@ spack:
       - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access3-share:
       require:
-      - '@git.68b11be086fceb97124aa3b1dba799c01f8d3413=stable'           # rCM3 modified branch
+      - '@git.ebf034d9f7b708520c3c5b83691bd70180f8ed96=stable'           # rCM3 modified branch
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
