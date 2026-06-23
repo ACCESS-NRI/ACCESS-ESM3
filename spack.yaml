@@ -15,63 +15,63 @@ spack:
     # Main Dependencies
     access3:
       require:
-      - '@git.d63adae27696f2caae36625a80dcd436e03475cd=stable'          # rCM3 modified branch
+      - '@git.d63adae27696f2caae36625a80dcd436e03475cd=stable'
       - configurations=MOM6-CICE6-UM13
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     um:
       require:
       - '@13.5'
       - casim_ref=um13.5 jules_ref=JULES_vn7.5 shumlib_ref=um13.5 socrates_ref=um13.5 ukca_ref=um13.5 um_ref=regional_cm3-dev_spackbuild
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     access-cice:
       require:
-      - '@git.a6bb0046fa4f63e07cd6222dd401e0537a158207=CICE6.6.3-0'
+      - '@git.3286c36f9b9125ffddbc4d3aa9f98ff87ae1aded=CICE6.6.3-0'
       - io_type=PIO
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     access-mom6:
       require:
-      - '@2025.07.000'
-      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
-      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
-      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - '@2026.01.001'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     access3-share:
       require:
-      - '@git.d63adae27696f2caae36625a80dcd436e03475cd=stable'           # rCM3 modified branch
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - '@git.d63adae27696f2caae36625a80dcd436e03475cd=stable'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     access-generic-tracers:
       require:
-      - '@2025.08.000'
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - '@2026.02.001'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     access-mocsy:
       require:
       - '@2025.07.002'
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
 
     # Other Dependencies
     gcom:
       require:
       # - '@8.0'
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     esmf:
       require:
-      - '@8.7.0'
-      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -traceback"
-      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -fno-omit-frame-pointer"
-      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll -fno-omit-frame-pointer"
+      - '@8.9.1'
+      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -traceback"
+      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -fno-omit-frame-pointer"
+      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll -fno-omit-frame-pointer"
     parallelio:
       require:
       - '@2.6.8'
