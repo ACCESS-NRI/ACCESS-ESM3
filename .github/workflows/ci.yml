@@ -23,7 +23,6 @@ jobs:
     uses: access-nri/build-cd/.github/workflows/ci.yml@v8
     with:
       model: ${{ vars.NAME }}
-     # TODO: Check versions are appropriate
       spack-manifest-schema-version: 2-0-0
       config-versions-schema-version: 4-0-0
       config-packages-schema-version: 1-0-0
