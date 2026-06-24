@@ -62,7 +62,7 @@ spack:
     # Other Dependencies
     gcom:
       require:
-      - '@7.8'
+      - '@8.3'
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
