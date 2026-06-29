@@ -117,3 +117,45 @@ spack:
   concretizer:
     unify: true
   develop: {}
+
+  modules:
+      prefix_inspections:
+        bin:
+         - PATH
+        lib:
+         - LIBRARY_PATH
+         - LD_LIBRARY_PATH
+        lib64:
+         - LIBRARY_PATH
+         - LD_LIBRARY_PATH
+        include:
+         - FPATH
+
+      default:
+        tcl:
+          include:
+            - access-esm3
+            - access-mom6
+            - access-cice
+            - access3-share
+            - access3
+            - esmf
+            - fms
+            - parallelio
+            - fortranxml
+            - gcom
+            - netcdf-c
+            - netcdf-fortran
+
+          projections:
+            access-esm3: '{name}/2026.06.03-esm3-{hash:7}'
+            access-cice: '{name}/access-cm3-CICE6.6.1-0-esm3-{hash:7}'
+            access-mom6: '{name}/cmake_build-esm3-{hash:7}'
+            access3-share: '{name}/access-cm3-2025.12.0-esm3-{hash:7}'
+            parallelio: '{name}/2.6.2-esm3-{hash:7}'
+            fortranxml: '{name}/4.1.2-esm3-{hash:7}'
+            fms: '{name}/2024.03-esm3-{hash:7}'
+            esmf: '{name}/v8.7.0-esm3-{hash:7}'
+            netcdf-c: '{name}/4.9.2-esm3-{hash:7}'
+            netcdf-fortran: '{name}/4.6.1-esm3-{hash:7}'
+            gcom: '{name}/7.8-esm3{hash:7}'
