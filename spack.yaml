@@ -2,67 +2,160 @@
 #
 # It describes a set of packages to be installed, along with
 # configuration settings.
+# Instructions for editing this file are found in
+# https://github.com/ACCESS-NRI/model-deployment-template/blob/main/spack.yaml
 spack:
-  # definitions:
-    # TODO: _name and _version are required reserved definitions that inform build-cd deployments, and have no effect otherwise
-    # - _name: [DEPLOYMENT_NAME_HERE]
-    # - _version: [DEPLOYMENT_VERSION_HERE]
-
-    # TODO: This section is used primarily to provide variations to a model based on deployment target. Delete if not required.
-    # This is the root spack bundle that contains the model
-    # - ROOT_PACKAGE:
-    #   - MODEL@git.GIT_REF=SPACK_VERSION
-
-    # Mutually-exclusive Compiler and Target definitions (assumes DEPLOYMENT_TARGET set)
-    # - when: env['DEPLOYMENT_TARGET'] == 'Gadi'
-    #   compiler_target: ['%intel@19.0.5.281 target=x86_64_v4']
-    # More mutually-exclusive definitions can be made...
-    # Default
-    # - when: "'DEPLOYMENT_TARGET' not in env"
-    #   compiler_targets: ['intel@2021.2.0 target=x86_64']
-
-    # This is where the single definitions of ROOT_PACKAGE and compiler/target are
-    # matrixed together to form a single spec: MODEL@git.GIT_REF=SPACK_VERSION %intel@2021.2.0 target=x86_64
-    # - ROOT_SPEC:
-    #   - matrix:
-    #     - [$ROOT_PACKAGE]
-    #     - [$%compiler_target]
-
+  # _name and _version are reserved definitions that inform deployments
+  definitions:
+  - _name: [access-esm3]
+  - _version: [2026.06.000]
   specs:
-    # The root Spack Bundle Recipe (SBR) for the model
-    # TODO: Replace the MODEL if there is only one deployment target
-    # - MODEL
-    # Alternatively, if there are multiple deployment targets that require
-    # different compilers/variants, use the above definitions section and:
-    # - $ROOT_SPEC
+  - access-esm3
   packages:
-    # Specification of dependency versions and variants. CI/CD requires that
-    # the first element of the require is only a version:
-    # TODO: Specify versions and variants of dependencies as required.
-    # openmpi:
-    #   require:
-    #   - '@4.1.5'
+    # Main Dependencies
+    access3:
+      require:
+      - '@git.435e6937295bba4de53aae215ef61dcea2d55604=stable'
+      - configurations=MOM6-CICE6-UM13
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    um:
+      require:
+      - '@13.0'
+      - casim_ref=um13.0 jules_ref=JULES_vn7.0 shumlib_ref=um13.0 socrates_ref=um13.0 ukca_ref=b42593d0c8fe744f9cc1d1556a664fec792f4766 um_ref=0850f33a9f9551c429bb8e6a14bedc98a699b106
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    access-cice:
+      require:
+      - '@git.599c7a555d0b129f5719c83286d1007c20473050=stable'
+      - io_type=PIO
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    access-mom6:
+      require:
+      - '@2025.07.000'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+    access3-share:
+      require:
+      - '@git.435e6937295bba4de53aae215ef61dcea2d55604=stable'
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    access-generic-tracers:
+      require:
+      - '@2025.08.000'
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    access-mocsy:
+      require:
+      - '@2025.07.002'
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+
+    # Other Dependencies
+    gcom:
+      require:
+      - '@7.8'
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+    esmf:
+      require:
+      - '@8.7.0'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+    parallelio:
+      require:
+      - '@2.6.2'
+    netcdf-c:
+      require:
+      - '@4.9.2'
+      - build_system=cmake build_type=RelWithDebInfo
+    netcdf-fortran:
+      require:
+      - '@4.6.1'
+    fms:
+      require:
+      - '@2025.03'
+      - cppflags="-DMAXFIELDMETHODS_=600"
+    openmpi:
+      require:
+      - '@4.1.7'
+    fortranxml:
+      require:
+      - '@4.1.2'
+    python:
+      require:
+      - '@3.11.7'   # force spack to use the system python install
+    gcc-runtime:
+      require:
+        - '%gcc'
 
     # Compilers
-    # TODO: For compilers used in this deployment, specify versions as required.
-    #       If changing compiler families, don't forget to update the 'all' section below.
+    c:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
+    cxx:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
+    fortran:
+      require:
+      - intel-oneapi-compilers-classic@2021.10.0
 
-    # Specifications that apply to all packages
     all:
-      # TODO: Specify compiler toolchain/targets for all packages
-      # require:
-      # - '%access_intel'
-      # - 'target=x86_64'
+      prefer:
+      - target=x86_64
   view: true
   concretizer:
     unify: true
-  # modules:
-  #   overridden module includes, projections, etc, if needed
-  #   we inject these in build-cd now, but custom ones can be added additionally here
-  # config:
-  #   overridden spack configurations, if needed. Preference is to use custom configurations scopes in
-  #   spack-config's custom/cd/SCOPE, referenced in the config/versions.json's custom-scopes field.
-  # mirrors:
-  #   overridden spack package tarball directories, if needed
-  # repos:
-  #   overridden repo sources, if needed
+  develop: {}
+
+  modules:
+      prefix_inspections:
+        bin:
+         - PATH
+        lib:
+         - LIBRARY_PATH
+         - LD_LIBRARY_PATH
+        lib64:
+         - LIBRARY_PATH
+         - LD_LIBRARY_PATH
+        include:
+         - FPATH
+
+      default:
+        tcl:
+          include:
+            - access-esm3
+            - access-mom6
+            - access-cice
+            - access3-share
+            - access3
+            - esmf
+            - fms
+            - parallelio
+            - fortranxml
+            - gcom
+            - netcdf-c
+            - netcdf-fortran
+
+          projections:
+            access-esm3: '{name}/2026.06.03-esm3-{hash:7}'
+            access-cice: '{name}/access-cm3-CICE6.6.1-0-esm3-{hash:7}'
+            access-mom6: '{name}/cmake_build-esm3-{hash:7}'
+            access3-share: '{name}/access-cm3-2025.12.0-esm3-{hash:7}'
+            parallelio: '{name}/2.6.2-esm3-{hash:7}'
+            fortranxml: '{name}/4.1.2-esm3-{hash:7}'
+            fms: '{name}/2024.03-esm3-{hash:7}'
+            esmf: '{name}/v8.7.0-esm3-{hash:7}'
+            netcdf-c: '{name}/4.9.2-esm3-{hash:7}'
+            netcdf-fortran: '{name}/4.6.1-esm3-{hash:7}'
+            gcom: '{name}/7.8-esm3{hash:7}'
