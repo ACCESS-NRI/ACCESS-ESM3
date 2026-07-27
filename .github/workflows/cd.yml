@@ -13,7 +13,7 @@ jobs:
     with:
       model: ${{ vars.NAME }}
       # TODO: Check versions are appropriate
-      spack-manifest-schema-version: 2-0-0
+      spack-manifest-schema-version: 3-0-0
     permissions:
       contents: write
       # This is due to the entrypoint also handling `on.pull_request` events
