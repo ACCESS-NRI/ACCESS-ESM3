@@ -3,6 +3,15 @@
 # It describes a set of packages to be installed, along with
 # configuration settings.
 spack:
+  definitions:
+  # NOTE: This manifest is an unfinished template - _name, _version and specs still need to be filled in.
+  # The following reserved definitions were migrated from config/versions.json and config/packages.json.
+  # _spack-version and _custom-scopes inform the branch of spack to use, and custom scopes if applicable, respectively
+  - _spack-version: ["1.1"]
+  - _custom-scopes: ["ukmo-restricted-scope"]
+  # Release database provenance information - packages for inclusion into the database, and packages just for injection into the modules
+  - _provenance: ["um", "gcom", "access-cice", "access-mom6", "access3", "access3-share", "access-generic-tracers", "access-mocsy"]
+  - _injection: []
   # definitions:
     # TODO: _name and _version are required reserved definitions that inform build-cd deployments, and have no effect otherwise
     # - _name: [DEPLOYMENT_NAME_HERE]
@@ -56,6 +65,11 @@ spack:
   view: true
   concretizer:
     unify: true
+  repos:
+    access_spack_packages:
+      git: https://github.com/ACCESS-NRI/access-spack-packages.git
+      tag: 2026.06.004
+      destination: $env/.package_repos/access-spack-packages
   # modules:
   #   overridden module includes, projections, etc, if needed
   #   we inject these in build-cd now, but custom ones can be added additionally here
