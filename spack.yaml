@@ -29,7 +29,7 @@ spack:
     um:
       require:
       - '@13.8'
-      - casim_ref=um13.8 jules_ref=um13.8 shumlib_ref=um13.8 socrates_ref=um13.8 ukca_ref=um13.8 um_ref=0541c6519fa18ca399b5da563f3bb995c619a52e
+      - casim_ref=um13.8 jules_ref=JULES_vn7.8 shumlib_ref=um13.8 socrates_ref=um13.8 ukca_ref=um13.8 um_ref=0541c6519fa18ca399b5da563f3bb995c619a52e
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
