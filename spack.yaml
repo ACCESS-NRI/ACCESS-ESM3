@@ -126,5 +126,5 @@ spack:
   repos:
     access_spack_packages:
       git: https://github.com/ACCESS-NRI/access-spack-packages.git
-      commit: 5895dcda3a32bf5886e202016d2de8c3b23fd7db
+      commit: 7a9acda3f9985d972f5e48b805f26313741cf64b
       destination: $env/package-repos/access-spack-packages
