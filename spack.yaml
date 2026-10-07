@@ -35,7 +35,7 @@ spack:
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     access-cice:
       require:
-      - '@git.b983fe1db89d26f49044336ffeccee8ef451e6f6=stable'
+      - '@git.b004541b23ad09b4c084f004f153a56db0dad0dc=stable'
       - io_type=PIO
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
