@@ -42,7 +42,7 @@ spack:
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     access-mom6:
       require:
-      - '@2025.07.000'
+      - '@2026.05.003'
       - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
@@ -54,7 +54,7 @@ spack:
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     access-generic-tracers:
       require:
-      - '@2025.08.000'
+      - '@2026.09.000'
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
