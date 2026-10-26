@@ -73,7 +73,7 @@ spack:
     # Other Dependencies
     gcom:
       require:
-      - '@8.4'
+      - '@git.95b362c248802228145929ac7767b82c44f96e1c=8.4'
       - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
       - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
       - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
