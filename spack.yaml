@@ -30,7 +30,7 @@ spack:
       require:
       - '@13.8'
       - model="vn13"
-      - um_ref="104eed6936d9982a552608bb7526a9e692d7ba2f"
+      - um_ref="ed9f0259ab5f6c128820ec4f4c7c457e3414c65c"
       - casim_ref="um13.8"
       - jules_ref="JULES_vn7.8"
       - shumlib_ref="um13.8"
