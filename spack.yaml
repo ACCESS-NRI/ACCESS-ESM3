@@ -79,7 +79,7 @@ spack:
       - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
     esmf:
       require:
-      - '@8.7.0'
+      - '@8.9.1'
       - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
       - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
       - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
