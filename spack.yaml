@@ -102,7 +102,7 @@ spack:
       - cppflags="-DMAXFIELDMETHODS_=600"
     openmpi:
       require:
-      - '@4.1.7'
+      - '@5.0.8'
     fortranxml:
       require:
       - '@4.1.2'
@@ -134,5 +134,5 @@ spack:
   repos:
     access_spack_packages:
       git: https://github.com/ACCESS-NRI/access-spack-packages.git
-      tag: 2026.10.006
+      commit: e3739b05205b5684314d6d3663a448fbbb79e4a3
       destination: $env/package-repos/access-spack-packages
