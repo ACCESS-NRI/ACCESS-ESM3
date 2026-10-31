@@ -29,10 +29,16 @@ spack:
     um:
       require:
       - '@13.8'
+      - um_ref="ed9f0259ab5f6c128820ec4f4c7c457e3414c65c"
       - model="vn13"
-      - casim_ref=um13.8 jules_ref=JULES_vn7.8 shumlib_ref=um13.8 socrates_ref=um13.8 ukca_ref=um13.8 um_ref=952b2d987104ad41b59a02e3a63b583981623fd4 
+      - casim_ref="um13.8"
+      - jules_ref="AM3-dev"
+      - shumlib_ref="2026.07.0"
+      - socrates_ref="um13.8"
+      - ukca_ref="AM3-2026.08.000"
       - platform_config_dir="nci-x86-oneapi"
       - fcflags_overrides="-march=sapphirerapids -mtune=sapphirerapids -qopt-zmm-usage=high"
+      - +cable
 
     cable:
       require:
