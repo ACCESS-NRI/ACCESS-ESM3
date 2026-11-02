@@ -21,7 +21,7 @@ spack:
     # Main Dependencies
     access3:
       require:
-      - '@git.3e6344af27161cc39e9b8cd4677d4c967289cb05=stable'
+      - '@git.19d141431501a4925702aa3398a6d561de54aacc=stable'
       - configurations=MOM6-CICE6-UM13
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
@@ -46,26 +46,26 @@ spack:
       - library=access3
     access-cice:
       require:
-      - '@git.b004541b23ad09b4c084f004f153a56db0dad0dc=stable'
+      - '@git.a19b0e50775b7eb8f0b4501005e445d33c523370=stable'
       - io_type=PIO
       - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
       - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     access-mom6:
       require:
-      - '@2026.05.003'
+      - '@2025.07.000'
       - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access3-share:
       require:
-      - '@git.3e6344af27161cc39e9b8cd4677d4c967289cb05=stable'
+      - '@git.19d141431501a4925702aa3398a6d561de54aacc=stable'
       - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access-generic-tracers:
       require:
-      - '@2026.09.000'
+      - '@2025.08.000'
       - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
       - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
@@ -108,7 +108,7 @@ spack:
       - cppflags="-DMAXFIELDMETHODS_=600"
     openmpi:
       require:
-      - '@5.0.8'
+      - '@4.1.7'
     fortranxml:
       require:
       - '@4.1.2'
