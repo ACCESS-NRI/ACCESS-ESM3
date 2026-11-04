@@ -37,7 +37,6 @@ spack:
       - socrates_ref="um13.8"
       - ukca_ref="AM3-2026.08.000"
       - platform_config_dir="nci-x86-ifort"
-      - fcflags_overrides="-march=skylake-avx512 -mtune=skylake-avx512 -qopt-zmm-usage=high"
       - +cable
 
     cable:
