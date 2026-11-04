@@ -23,9 +23,9 @@ spack:
       require:
       - '@git.19d141431501a4925702aa3398a6d561de54aacc=stable'
       - configurations=MOM6-CICE6-UM13
-      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
-      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
-      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     um:
       require:
       - '@13.8'
@@ -36,8 +36,8 @@ spack:
       - shumlib_ref="2026.07.0"
       - socrates_ref="um13.8"
       - ukca_ref="AM3-2026.08.000"
-      - platform_config_dir="nci-x86-oneapi"
-      - fcflags_overrides="-march=sapphirerapids -mtune=sapphirerapids -qopt-zmm-usage=high"
+      - platform_config_dir="nci-x86-ifort"
+      - fcflags_overrides="-march=skylake-avx512 -mtune=skylake-avx512 -qopt-zmm-usage=high"
       - +cable
 
     cable:
@@ -48,56 +48,56 @@ spack:
       require:
       - '@git.b983fe1db89d26f49044336ffeccee8ef451e6f6=stable'
       - io_type=PIO
-      - fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
-      - cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
-      - cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"
+      - fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
+      - cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"
     access-mom6:
       require:
       - '@2025.07.000'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access3-share:
       require:
       - '@git.19d141431501a4925702aa3398a6d561de54aacc=stable'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access-generic-tracers:
       require:
       - '@2025.08.000'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     access-mocsy:
       require:
       - '@2025.07.002'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
 
     # Other Dependencies
     gcom:
       require:
       - '@git.95b362c248802228145929ac7767b82c44f96e1c=8.4'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     esmf:
       require:
-      - '@8.9.1'
-      - 'fflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
-      - 'cxxflags="-march=sapphirerapids -mtune=sapphirerapids -unroll"'
+      - '@8.7.0'
+      - 'fflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
+      - 'cxxflags="-march=skylake-avx512 -mtune=skylake-avx512 -unroll"'
     parallelio:
       require:
-      - '@2.6.8'
+      - '@2.6.2'
       - fflags="-g -traceback"
       - cflags="-g -fno-omit-frame-pointer"
       - cxxflags="-g -fno-omit-frame-pointer"
     netcdf-c:
       require:
-      - '@4.9.3'
+      - '@4.9.2'
       - build_system=cmake build_type=RelWithDebInfo
     netcdf-fortran:
       require:
@@ -122,13 +122,13 @@ spack:
     # Compilers
     c:
       require:
-      - intel-oneapi-compilers@2025.3.2
+      - intel-oneapi-compilers-classic@2021.10.0
     cxx:
       require:
-      - intel-oneapi-compilers@2025.3.2
+      - intel-oneapi-compilers-classic@2021.10.0
     fortran:
       require:
-      - intel-oneapi-compilers@2025.3.2
+      - intel-oneapi-compilers-classic@2021.10.0
 
     all:
       prefer:
