@@ -116,7 +116,7 @@ spack:
       - '@3.11.7'   # force spack to use the system python install
     gcc-runtime:
       require:
-        - '%gcc'
+      - '%gcc'
 
     # Compilers
     c:
